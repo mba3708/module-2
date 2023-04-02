@@ -1,0 +1,98 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex>div {
+  text-align: right;
+  color: red;
+}
+
+button{
+    background-color: red;
+    height: 50px;
+    width: 100px;
+    font-weight: bolder;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.md {
+  font-size: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card {
+  background-color: #777777;
+  color: #333;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-top: 0%;
+  padding-right: 20%;
+  margin: 10px;
+  border-color: black;
+  border: black;
+  font-weight: bold;
+}
+
+.features-main .grid {
+  padding: 30px;
+}
+
+
+@media (max-width: 993px) {
+    .features-main .grid > *:first-child {
+        grid-column: 1 / span 1.5;
+    }
+    .features-main .grid > *:nth-child(2) {
+        grid-template-columns: 2fr 2fr
+    }
+    .features-main .grid > *:last-child {
+        grid-column: 1 / span 2;
+        gap: 10px;
+    }
+    
+}
+
+/*  Mobile  */
+@media (max-width: 767px) {
+    .grid,
+    .features-main .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .features-main .grid > *:first-child,
+    .features-main .grid > *:nth-child(2),
+    .features-main .grid > *:last-child {
+            grid-column: 1;
+    }
+}
